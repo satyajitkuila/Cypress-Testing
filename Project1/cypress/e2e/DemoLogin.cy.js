@@ -1,9 +1,7 @@
 
 it('T1:user on login page',function(){
     cy.visit('http://automationpractice.com/index.php')
-    cy.get('.login').click()
-
-    
+    cy.get('.login').click()   
     
 })
 
