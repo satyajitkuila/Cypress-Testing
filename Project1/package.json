@@ -4,7 +4,12 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "pretest": "rimraf -r ./cypress/reports/*.json",
+    "test": "npm run Cypresstest || npm run posttest",
+    "Cypresstest": "cypress run --spec 'cypress/e2e/DemoLogin.cy.js'",
+    "posttest": "npm run merge-report && npm run generate-htmlreport",
+    "merge-report": "mochawesome-merge ./cypress/reports/*.json > ./report1.json",
+    "generate-htmlreport": "marge ./report1.json --reportDir ./cypress/reports"
   },
   "keywords": [],
   "author": "",
@@ -18,6 +23,7 @@
     "cypress-downloadfile": "^1.2.3",
     "mochawesome-merge": "^4.2.1",
     "mochawesome-report-generator": "^6.2.0",
+    "rimraf": "^3.0.2",
     "typescript": "^4.8.3"
   }
 }

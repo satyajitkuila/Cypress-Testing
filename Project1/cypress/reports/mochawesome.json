@@ -2,14 +2,14 @@
   "stats": {
     "suites": 0,
     "tests": 3,
-    "passes": 3,
+    "passes": 2,
     "pending": 0,
-    "failures": 0,
-    "start": "2022-09-16T08:17:54.155Z",
-    "end": "2022-09-16T08:18:45.843Z",
-    "duration": 51688,
+    "failures": 1,
+    "start": "2022-09-20T05:55:51.829Z",
+    "end": "2022-09-20T05:57:14.029Z",
+    "duration": 82200,
     "testsRegistered": 3,
-    "passPercent": 100,
+    "passPercent": 66.66666666666666,
     "pendingPercent": 0,
     "other": 0,
     "hasOther": false,
@@ -18,7 +18,7 @@
   },
   "results": [
     {
-      "uuid": "fb28c651-5ab3-4501-b846-db79603adc9f",
+      "uuid": "ebf6dc7a-b732-45eb-a64b-89ab9798acc8",
       "title": "",
       "fullFile": "cypress\\e2e\\DemoLogin.cy.js",
       "file": "cypress\\e2e\\DemoLogin.cy.js",
@@ -29,7 +29,7 @@
           "title": "T1:user on login page",
           "fullTitle": "T1:user on login page",
           "timedOut": null,
-          "duration": 30627,
+          "duration": 47926,
           "state": "passed",
           "speed": "slow",
           "pass": true,
@@ -38,8 +38,8 @@
           "context": null,
           "code": "cy.visit('http://automationpractice.com/index.php');\ncy.get('.login').click();",
           "err": {},
-          "uuid": "13f37dc5-f80d-4c70-8567-74df9e6b5c4f",
-          "parentUUID": "fb28c651-5ab3-4501-b846-db79603adc9f",
+          "uuid": "e7467206-6c6f-4036-9544-3b7a7e7e7e31",
+          "parentUUID": "ebf6dc7a-b732-45eb-a64b-89ab9798acc8",
           "isHook": false,
           "skipped": false
         },
@@ -47,7 +47,7 @@
           "title": "T2:User enters username and password",
           "fullTitle": "T2:User enters username and password",
           "timedOut": null,
-          "duration": 14019,
+          "duration": 13864,
           "state": "passed",
           "speed": "slow",
           "pass": true,
@@ -56,8 +56,8 @@
           "context": null,
           "code": "cy.get('#email').type('samuelwitwicky56@gmail.com');\ncy.get('#passwd').type('kanhu143');\ncy.get('#SubmitLogin > span').click();",
           "err": {},
-          "uuid": "44ed8c1a-fcb0-4ff5-a99b-3d5938fe98b0",
-          "parentUUID": "fb28c651-5ab3-4501-b846-db79603adc9f",
+          "uuid": "b87f4464-c944-4859-8bcc-35c0ea1c76ee",
+          "parentUUID": "ebf6dc7a-b732-45eb-a64b-89ab9798acc8",
           "isHook": false,
           "skipped": false
         },
@@ -65,31 +65,36 @@
           "title": "T3:User Login is successful",
           "fullTitle": "T3:User Login is successful",
           "timedOut": null,
-          "duration": 24,
-          "state": "passed",
-          "speed": "fast",
-          "pass": true,
-          "fail": false,
+          "duration": 4131,
+          "state": "failed",
+          "speed": null,
+          "pass": false,
+          "fail": true,
           "pending": false,
           "context": null,
           "code": "cy.title().should('eq', 'My account - My Store');",
-          "err": {},
-          "uuid": "859c6758-5881-4f20-8a7c-d8753a1cefd3",
-          "parentUUID": "fb28c651-5ab3-4501-b846-db79603adc9f",
+          "err": {
+            "message": "AssertionError: Timed out retrying after 4000ms: expected '508 Resource Limit Is Reached' to equal 'My account - My Store'",
+            "estack": "AssertionError: Timed out retrying after 4000ms: expected '508 Resource Limit Is Reached' to equal 'My account - My Store'\n    at Context.eval (http://automationpractice.com/__cypress/tests?p=cypress\\e2e\\DemoLogin.cy.js:109:14)",
+            "diff": "- '508 Resource Limit Is Reached'\n+ 'My account - My Store'\n"
+          },
+          "uuid": "db4c04a6-8979-4b31-8cbd-46f41e674861",
+          "parentUUID": "ebf6dc7a-b732-45eb-a64b-89ab9798acc8",
           "isHook": false,
           "skipped": false
         }
       ],
       "suites": [],
       "passes": [
-        "13f37dc5-f80d-4c70-8567-74df9e6b5c4f",
-        "44ed8c1a-fcb0-4ff5-a99b-3d5938fe98b0",
-        "859c6758-5881-4f20-8a7c-d8753a1cefd3"
+        "e7467206-6c6f-4036-9544-3b7a7e7e7e31",
+        "b87f4464-c944-4859-8bcc-35c0ea1c76ee"
       ],
-      "failures": [],
+      "failures": [
+        "db4c04a6-8979-4b31-8cbd-46f41e674861"
+      ],
       "pending": [],
       "skipped": [],
-      "duration": 44670,
+      "duration": 65921,
       "root": true,
       "rootEmpty": false,
       "_timeout": 2000
@@ -117,7 +122,7 @@
         "overwrite": false,
         "html": false,
         "json": true,
-        "reportDir": "cypress/reports"
+        "reportDir": "./cypress/reports"
       },
       "version": "6.2.0"
     }
